@@ -1,6 +1,6 @@
 @use '../misc/_mixins' as *
 header
-  background: url('/app/images/mobile/image-header.jpg')
+  background: url('./app/images/mobile/image-header.jpg')
   background-repeat: no-repeat
   background-size: 100% 100%
   justify-content: space-between
@@ -10,6 +10,6 @@ header
 
 @include desktop()
   header
-    background: url('/app/images/desktop/image-header.jpg') no-repeat
+    background: url('./app/images/desktop/image-header.jpg') no-repeat
     padding: 2.4rem var(--side-px) 31.5rem var(--side-px)
     background-size: cover

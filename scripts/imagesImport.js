@@ -1,4 +1,4 @@
-const base = '/app/images/';
+const base = './app/images/';
 
 const imageTransform = 'image-transform.jpg';
 const imageStandOut = 'image-stand-out.jpg';
