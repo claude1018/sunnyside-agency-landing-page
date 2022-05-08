@@ -1,0 +1,33 @@
+@use '../misc/_mixins' as *
+  
+.hamburger
+  cursor: pointer
+  & span
+    background: #fff
+    display: block
+    height: 0.2rem
+    width: 3rem
+    transition: all 0.3s ease-in-out
+  &::before, &::after
+    content: ''
+    background: #fff
+    display: inline-block
+    height: 0.2rem
+    transition: transform 0.3s ease-in-out
+    width: 3rem   
+  &::before
+    transform: translateY(-3px)
+  &::after
+    transform: translateY(-2px)
+  &.open
+    & span
+      transform: translateX(5rem)
+      visibility: hidden
+    &::before
+     transform: rotate(45deg) translate(7px, 2.5px)
+    &::after
+      transform: rotate(-45deg) translate(8px, -4px)
+    
+@include desktop()
+  .hamburger
+    display: none

@@ -1,0 +1,28 @@
+{
+  "name": "sunnyside-agency-landing-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "claude",
+  "scripts": {
+    "watch:all": "gulp watch",
+    "build:scripts": "gulp scripts",
+    "build:sass": "gulp buildSass"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.4.13",
+    "sass": "^1.51.0"
+  }
+}

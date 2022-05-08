@@ -1,0 +1,51 @@
+@use '../misc/_mixins' as *
+.footer
+  &.grid
+    display: grid
+    grid-template-areas: 'logo' 'links' 'social-icons' 'attribution'
+    text-align: center
+    padding: 4rem 0
+    background: var(--footer-color)
+    gap: 2.4rem
+  & figure.logo
+    grid-area: logo
+    & svg
+      --color-fill: var(--dark-desaturated-green)
+  &.links
+    grid-area: links
+    display: flex
+    justify-content: space-evenly
+    & a
+      text-decoration: none
+      color: var(--dark-desaturated-green)
+      font-size: 1.6rem
+      font-family: 'Barlow', sans-serif
+      font-weight: 300
+      &:hover 
+        color: #fff
+
+  & div.social-icons
+    padding: 3.4rem 0
+    & svg
+      cursor: pointer
+      width: 1.8rem
+      height: auto
+      margin-right: 1.4rem
+      --color-fill: var(--dark-desaturated-green)
+      &:hover 
+        --color-fill: #fff
+  
+  & div.attribution
+    color: var(--dark-desaturated-green)
+    font-family: 'Barlow', sans-serif
+    & a
+      color: var(--dark-blue)
+      &:hover 
+        color: var(--very-dark-desaturated-blue)
+        font-size: 2rem
+
+@include desktop()
+  .footer.links
+    max-width: 50rem
+    gap: 3rem
+    margin: 0 auto

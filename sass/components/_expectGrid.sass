@@ -1,0 +1,139 @@
+@use '../misc/_mixins' as *
+
+.expect-base-title
+  font-family: 'Fraunces', serif
+  font-size: 2.4rem
+  font-weight: 700
+  letter-spacing: 1px
+.expect-base-body
+  font-family: 'Barlow', sans-serif
+  font-weight: 600
+  font-size: 1.8rem
+  letter-spacing: 1px
+  line-height: 2.2rem
+  margin: 0 auto
+  width: 90%
+.expect-button-hover
+  position: absolute
+  content: ''
+  display: block
+  height: 0.8rem
+  border-radius: 2.5rem
+  width: 105%
+  left: -2.5%
+  bottom: 1%
+  opacity: 0.85
+.expect
+  &.grid
+    display: grid
+    grid-template-areas: "expect-image-one" "expect-details-one" "expect-image-two" "expect-details-two" "expect-special-one" "expect-special-two"
+    text-align: center
+    gap: 0
+    & section
+      padding: 5rem var(--side-px)     
+  &.image
+    height: 100%
+    & img 
+      height: 100%
+      width: 100%
+      display: block
+    &.one
+      grid-area: expect-image-one
+    &.two
+      grid-area: expect-image-two
+  &.details
+    display: flex
+    flex-direction: column
+    gap: 2.5rem
+    & h2
+      color: var(--dark-grayish--blue)
+      font-size: min(max(2.4rem, 3vw + 1rem, 4rem))
+      @extend .expect-base-title    
+    & p
+      color: var(--grayish-blue)
+      @extend .expect-base-body     
+    & button
+      all: unset
+      color: var(--very-dark-desaturated-blue)
+      cursor: pointer
+      font-family: 'Fraunces', serif
+      font-size: clamp(1.2rem, 1vw + 1rem, 1.8rem)
+      font-weight: 900
+      letter-spacing: 1px
+      text-transform: uppercase
+    &.one
+      grid-area: expect-details-one
+      & button:hover
+        position: relative
+        width: fit-content
+        &::after
+          background: var(--primary-yellow)
+          @extend .expect-button-hover
+    &.two
+      grid-area: expect-details-two
+      & button:hover
+        position: relative
+        width: fit-content
+        &::after
+          background: var(--soft-red)
+          @extend .expect-button-hover
+  & section.special
+    display: flex
+    flex-direction: column
+    gap: 2.5rem
+    &.one
+      grid-area: expect-special-one
+      background: url('/app/images/mobile/image-graphic-design.jpg')
+      padding: 40rem var(--side-px) 4.8rem var(--side-px)
+      background-size: cover
+      background-repeat: no-repeat
+      & h2
+        color: var(--dark-desaturated-green)
+        @extend .expect-base-title
+      & p
+        color: var(--dark-desaturated-green)
+        max-width: 33rem
+        @extend .expect-base-body
+    &.two
+      grid-area: expect-special-two
+      background: url('/app/images/mobile/image-photography.jpg')
+      padding: 40rem var(--side-px) 4.8rem var(--side-px)
+      background-size: cover
+      background-repeat: no-repeat
+      & h2
+        color: var(--dark-blue)
+        @extend .expect-base-title
+      & p
+        color: var(--dark-blue)
+        max-width: 33rem
+        @extend .expect-base-body
+
+
+@include desktop()
+  .expect 
+    img
+      display: block
+    &.grid
+      grid-template-areas: "expect-details-one expect-image-one" "expect-image-two expect-details-two" "expect-special-one expect-special-two"
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: repeat(3, 1fr)
+      height: 174rem
+      align-items: center
+      text-align: left
+    &.details 
+      gap: 3.5rem
+      margin-left: 10rem
+      & p
+        margin: 0
+    & section.special
+      height: 100%
+      &.one
+        background: url('/app/images/desktop/image-graphic-design.jpg')
+        background-size: cover
+        background-repeat: no-repeat
+        text-align: center
+      &.two
+        background: url('/app/images/desktop/image-photography.jpg')
+        background-size: cover
+        background-repeat: no-repeat
+        text-align: center

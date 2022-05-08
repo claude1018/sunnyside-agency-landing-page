@@ -1,0 +1,27 @@
+@use '../misc/_mixins' as *
+
+.gallery
+  & img
+    width: 100%
+    height: auto
+  &.grid
+    margin-top: 5.5rem
+    display: grid
+    grid-template-areas: 'one two' 'three four'
+    grid-template-columns: 1fr 1fr
+    gap: 0
+  &.image.one
+    grid-area: one
+  &.image.two
+    grid-area: two
+  &.image.three
+    grid-area: three
+  &.image.four
+    grid-area: four
+
+@include desktop()
+  .gallery
+    &.grid
+      grid-template-areas: 'one two three four'
+      grid-template-columns: repeat(4, 1fr)
+      grid-template: 44rem
